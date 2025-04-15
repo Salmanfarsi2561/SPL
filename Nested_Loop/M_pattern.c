@@ -30,6 +30,7 @@ int main() {
         printf("\n");
     }
     printf("Testing");
+    printf("Testing commit 2");
 
     return 0;
 }
