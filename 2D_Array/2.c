@@ -30,10 +30,12 @@ int main() {
     }
 
     // Print the array column-wise
+    // Here I am swapping m and n to print column-wise
+    // and printing array[j][i] to access the elements in column-major order
     printf("\nArray printed column-wise:\n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            printf("%d ", array[i][j]);
+            printf("%d ", array[j][i]);
         }
         
     }
