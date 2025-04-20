@@ -2,8 +2,23 @@
 
 int main()
 {
-    printf("Hello World\n");
-    printf("This is to test the github commit function :\n");
-    printf("This is to test the github commit function 2nd time::\n");
-    printf("This is to test the github commit function 3rd time::\n");
+    int arr[3][3];
+
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            printf("Enter element Row:[%d] col:[%d] element: ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
 }
