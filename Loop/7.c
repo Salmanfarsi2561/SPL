@@ -1,9 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    char inputs[100]; // Array to store inputs
-    int index = 0;
-    char ch,sum=0;
+    char inputs[100];
     int i;
 
     printf("Enter characters (type 'A' to stop):\n");
