@@ -3,7 +3,7 @@
 int main() {
     int num, isPrime = 0;
 
-    // Input the number
+    
     printf("Enter a positive integer: ");
     scanf("%d", &num);
 
@@ -11,7 +11,7 @@ int main() {
     if (num < 2) {
         isPrime = 0; // Numbers less than 2 are not prime
     } else {
-        // Check divisors from 2 to sqrt(num)
+        // Check divisors
         for (int i = 1; i <= num; i++) {
             if (num % i == 0) {
                 isPrime++; // If divisible, it's not prime
@@ -20,7 +20,7 @@ int main() {
         }
     }
 
-    // Display the result
+    
     if (isPrime==2) {
         printf("%d is a prime number.\n", num);
     } else {
