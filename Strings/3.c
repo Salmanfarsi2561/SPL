@@ -1,21 +1,31 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    char str[100];
-    int i = 0, count = 0;
+int vowels(char *str){
+    int i=0,count=0;
 
-    printf("Enter a string: ");
-    gets(str);
-
-    while (str[i] != '\0') {
-        char ch = str[i];
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
-            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+    while(str[i]!='\0'){
+        int ch=str[i];
+        if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||
+           ch=='a'||ch=='e'||ch=='i'||ch=='0'||ch=='u'){
             count++;
+           }
         i++;
     }
+    return count;
 
-    printf("Number of vowels: %d\n", count);
+}
 
-    return 0;
+
+
+int main(){
+
+    int str[100];
+    int v_count;
+    printf("Enter your string :");
+    gets(str);
+
+    v_count=vowels(str);
+
+    printf("Your vowel count is :%d",v_count);
+
 }

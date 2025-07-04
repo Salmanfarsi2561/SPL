@@ -1,21 +1,30 @@
-#include <stdio.h>
-#include <string.h>
-int main() {
-    char str[100];
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    int len = strlen(str);
-    if (str[len-1] == '\n') str[len-1] = '\0';
-    len = strlen(str);
-    for (int i = 0; i < len-1; i++) {
-        for (int j = i+1; j < len; j++) {
-            if (str[i] > str[j]) {
-                char temp = str[i];
-                str[i] = str[j];
-                str[j] = temp;
+
+#include<stdio.h>
+
+
+int main(){
+
+    char word[100];
+    printf("Enter Your word :");
+    gets(word);
+    int i =0,count=0;
+    while(word[i]!='\0'){
+        count++;
+        i++;
+    }
+
+    for(int i=0;word[i]!='\0';i++){
+        for(int j=0;j<count-1;j++){
+            if(word[j]>word[j+1]){
+                char temp = word[j];
+                word[j]=word[j+1];
+                word[j+1]=temp;
             }
         }
     }
-    printf("Sorted string: %s\n", str);
-    return 0;
+
+    printf("%s",word);
+
+
+
 }

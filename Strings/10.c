@@ -1,22 +1,40 @@
-#include <stdio.h>
-#include <string.h>
-int main() {
-    char str[100];
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    int len = strlen(str);
-    if (str[len-1] == '\n') str[len-1] = '\0';
-    len = strlen(str);
-    int flag = 1;
-    for (int i = 0; i < len/2; i++) {
-        if (str[i] != str[len-1-i]) {
-            flag = 0;
+#include<stdio.h>
+
+int main(){
+
+    char str1[100];
+    char rev[100];
+
+    printf("Enter Your string :");
+    gets(str1);
+
+    int i=0;
+    int len=0;
+
+    while(str1[len]!='\0'){
+
+        len++;
+    }
+
+    for(int j=len-1;j>=0;j--){
+        rev[i]=str1[j];
+        i++;
+    }
+
+    rev[i]='\0';
+    int k=0;
+    int flag=0;
+    while(rev[k]!='\0'){
+        if(rev[k]!=str1[k]){
+            flag++;
             break;
         }
+        k++;
     }
-    if (flag)
-        printf("Palindrome\n");
-    else
-        printf("Not palindrome\n");
-    return 0;
+
+    if(flag){
+        printf("Not Magic");
+    }
+    else {printf("MAGIC");}
+
 }

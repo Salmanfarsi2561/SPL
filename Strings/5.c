@@ -1,20 +1,35 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    char str[100];
-    int i = 0, len = 0;
+int *reverse(char *str, char *rev_word){
+    int i;
+    for(i =0; str[i]!='\0';i++){
+        //Just advancing the I
+    }
+    int index=0;
+    for(int j=i-1;j>=0;j--){
+        rev_word[index]=str[j];
+        index++;
+    }
+    rev_word[index]='\0';
 
-    printf("Enter a string: ");
-    gets(str);
+    return rev_word;
 
-    // Find length
-    while (str[len] != '\0') len++;
 
-    printf("Reversed string: ");
-    for (i = len - 1; i >= 0; i--)
-        printf("%c", str[i]);
-
-    printf("\n");
-
-    return 0;
 }
+
+
+int main(){
+
+    char word[100],rev_word[100];
+
+    printf("Enter your word: ");
+    gets(word);
+
+    char *revs=reverse(word,rev_word);
+
+    printf("%s",revs);
+
+
+
+}
+

@@ -1,18 +1,36 @@
 #include <stdio.h>
-#include <string.h>
+
 int main() {
-    char str[200], word[50];
-    int count = 0;
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    printf("Enter word to search: ");
-    scanf("%s", word);
-    char *token = strtok(str, " \n");
-    while (token != NULL) {
-        if (strcmp(token, word) == 0)
-            count++;
-        token = strtok(NULL, " \n");
+    char sentence[100];
+    char word[100];
+
+    printf("Enter the sentence: ");
+    gets(sentence);
+
+    printf("Enter the word to search: ");
+    gets(word);
+
+    int word_len = 0;
+    while (word[word_len] != '\0') {
+        word_len++;
     }
-    printf("Occurrences: %d\n", count);
+
+    int occ = 0;
+
+    for (int i = 0; sentence[i] != '\0'; i++) {
+        int j = 0;
+        while (sentence[i+j] == word[j] && word[j] != '\0') {
+            j++;
+
+
+        }
+        if (j == word_len) {
+            occ++;
+        }
+    }
+
+    printf("Occurrences: %d\n", occ);
+
     return 0;
 }
+

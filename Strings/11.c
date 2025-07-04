@@ -1,13 +1,20 @@
-#include <stdio.h>
-int main() {
+#include<stdio.h>
+
+int main(){
+
     char str[100];
-    int sum = 0;
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] >= '0' && str[i] <= '9')
-            sum += str[i] - '0';
+    printf("Enter your string :");
+    gets(str);
+
+    int i=0,sum=0;
+    while(str[i]!='\0'){
+        char num = str[i];
+        if(num>='0'&& num<='9'){
+            sum=sum+(num-48);
+        }
+
+        i++;
     }
-    printf("Sum of digits: %d\n", sum);
-    return 0;
+    printf("Sum is :%d ",sum);
+
 }

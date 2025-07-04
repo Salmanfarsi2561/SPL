@@ -1,22 +1,23 @@
 #include <stdio.h>
+
 int main() {
-    char str[100], res[100];
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    int k = 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        int found = 0;
-        for (int j = 0; j < k; j++) {
-            if (str[i] == res[j]) {
-                found = 1;
-                break;
+    char name[100];
+    printf("Enter your string: ");
+    gets(name);  // unsafe, use fgets in real-world code
+
+    for (int i = 0; name[i] != '\0'; i++) {
+        for (int j = i + 1; name[j] != '\0'; j++) {
+            if (name[i] == name[j]) {
+                // Shift left to remove duplicate
+                for (int k = j; name[k] != '\0'; k++) {
+                    name[k] = name[k + 1];
+                }
+                j--;  // check the new char that replaced name[j]
             }
         }
-        if (!found && str[i] != '\n') {
-            res[k++] = str[i];
-        }
     }
-    res[k] = '\0';
-    printf("String without repeats: %s\n", res);
+
+    printf("String after removing duplicates: %s\n", name);
     return 0;
 }
+

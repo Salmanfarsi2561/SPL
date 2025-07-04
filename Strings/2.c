@@ -1,27 +1,28 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    char str1[100], str2[100];
-    int i = 0, j = 0;
+int main(){
 
-    printf("Enter first string: ");
+    char str1[100],str2[100];
+
+    printf("Enter Your string 1: ");
     gets(str1);
 
-    printf("Enter second string: ");
+    printf("Enter Your string 1: ");
     gets(str2);
 
-    // Find end of str1
-    while (str1[i] != '\0') i++;
+    int i=0,j=0;
 
-    // Append str2 to str1
-    while (str2[j] != '\0') {
-        str1[i] = str2[j];
+    while(str1[i]!='\0'){
+        i++;
+    }
+    str1[i]=' ';
+    i++;
+    while(str2[j]!='\0'){
+        str1[i]=str2[j];
         i++;
         j++;
     }
-    str1[i] = '\0';
+    str1[i]='\0';
 
-    printf("Concatenated string: %s\n", str1);
-
-    return 0;
+    printf("Your string is : %s",str1);
 }
