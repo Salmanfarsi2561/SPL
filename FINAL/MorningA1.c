@@ -1,68 +1,59 @@
-#include <stdio.h>
-
-int getSize(char str[]) {
-    int size = 0;
-    while (str[size] != '\0') {
-        size++;
+#include<stdio.h>
+#define max 100
+#include<string.h>
+int getSize(char str[]){
+    int i=0;
+    while(str[i]!='\0'){
+        i++;
     }
-    return size;
+    return i;
 }
 
-int removeAllDuplicates(char str[]) {
-    int size = getSize(str);
-    int i, j, k;
-
-
-    for (i = 0; i < size; i++) {
-
-        for (j = i + 1; j < size;j++) {
-            if (str[i] == str[j]) {
-
-                for (k = j; k < size; k++) {
-                    str[k] = str[k + 1];
+char removeAllDuplicates(char str[]){
+    for(int i =0; str[i]!='\0';i++){
+        for(int j=i+1;str[j]!='\0';j++){
+            if(str[i]==str[i+1]){
+                for(int x=j;str[x]!='\0';x++){
+                    str[x]=str[x+1];
                 }
-                size--;
+                j--;
             }
         }
     }
 }
 
-
-void checkPalindrome(char *str) {
+void checkPalindrome(char *str){
+    int i,j,flag=0;
     int size = getSize(str);
-    int i, j;
-    int isPalindrome = 1;
-    for (i = 0, j = size - 1; i < j; i++, j--) {
-        if (str[i] != str[j]) {
-            isPalindrome = 0;
+
+
+    for(i=0,j=size-2;i<j;i++,j--){
+        if(str[i]!=str[j]){
+            flag++;
             break;
         }
     }
-    if (isPalindrome) {
-        printf("The string '%s' is a palindrome\n", str);
-    } else {
-        printf("The string '%s' is not a palindrome\n", str);
-    }
+
+    if(flag) printf("NO ");
+    else printf("PAL");
+
 }
 
-int main() {
-    char str[100];
-    int i = 0;
-    char c;
+
+int main(){
+    char str[max];
 
 
-    printf("Enter a string: ");
-    gets(str);
-
-
-    printf("Original string: %s\n", str);
-
+    printf("Enter Your String : ");
+    fgets(str,max,stdin);
 
     removeAllDuplicates(str);
-    printf("String after removing duplicates: %s\n", str);
-
+    printf("Duplicate removed String is : %s",str);
 
     checkPalindrome(str);
 
-    return 0;
+
+
+
+
 }
