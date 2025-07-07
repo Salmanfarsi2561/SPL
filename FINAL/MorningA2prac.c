@@ -4,7 +4,7 @@
 # define sub 5 
 
 struct student {
-    char name[50];
+    char name[500];
     int id;
     int marks[sub];
     float avg;
@@ -28,9 +28,9 @@ int main() {
 
         if(choice==1){
             printf("Enter Students Name : ");
-            fgets(s[n].name,max,stdin);
+            scanf("%s",s[n].name);
             printf("ID: ");
-            scanf("%f",&s[n].id);
+            scanf("%d",&s[n].id);
 
 
             float sum=0;
