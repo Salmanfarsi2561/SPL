@@ -22,16 +22,24 @@ void modifyString(char str[]) {
         char c = str[i];
         if (c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='A'||c=='E'||c=='I'||c=='O'||c=='U') {
             str[i] = c + 1;
-            if (str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u') str[i]++;
         }
     }
 }
 
 int isLuckyNumber(int n) {
-    if (n % 2 == 0) return 0;
-    for (int i = 2; i*i <= n; i++)
-        if (n % i == 0) return 0;
-    return 1;
+    if(n%2==0) return 0;
+
+    int count =0;
+    for(int i=1;i<=n;i++){
+        if(n%i==0){
+            count++;
+        }
+    }
+
+    if(count==2){
+        return 1;
+    }
+    else return 0;
 }
 
 int main() {
