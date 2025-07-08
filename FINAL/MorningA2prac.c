@@ -43,5 +43,54 @@ int main() {
             s[n].avg=sum/5;
             n++;
         }
+
+        else if(choice==2){
+            for(int i=0;i<5;i++){
+                printf("Name :%s ID:%d AVG:%f\n",s[i].name,s[i].id,s[i].avg);
+                for(int j =0;j<5;j++){
+                    printf("Mark %d: %d\n",j+1,s[i].marks[j]);
+                    
+
+                }
+            }
+        }
+        else if(choice==3){
+            int top=0;
+            for(int i=0;i<5;i++){
+                if(s[i].avg>s[top].avg){
+                    top=i;
+                }
+            }
+
+            printf("Top performer : \n");
+            printf("Name :%s ID:%d  Average is :%f",s[top].name,s[top].id,s[top].avg);
+
+        }
+        else if (choice==4){
+
+            
+            for(int i=0;i<5;i++){
+                int fail=0;
+                for(int j=0;j<5;j++){
+                    if(s[i].marks[j]<40){
+                        fail++;
+                    }
+                }
+                if(fail>0){
+                    printf("Failed Student name : %s ID:%D Failed Subjects:%d",s[i].name,s[i].id,fail);
+                }
+
+            }
+
+        }
+
+        else if(choice==5) break;
+
+        else printf("Invalid Input (Enter 1-5)! Thank YoU!");
+        
+        
+
+        
     }
+    return 0;
 }
