@@ -1,10 +1,18 @@
 #include <stdio.h>
 
-int hasUniqueCharacters(char *str) {
-    for (char *p = str; *p; p++) {
-        for (char *q = p + 1; *q; q++) {
-            if (*p == *q) return 0;
+int isUniquech(char *str) {
+    int i;
+    int val;
+    int len=strlen(str);
+    int char_set[256]={0};
+    
+    for(i=0;i<len;i++){
+        val=(int)str[i];
+
+        if(char_set[val]!=0){
+            return 0;
         }
+        else char_set[val]=1;
     }
     return 1;
 }
@@ -35,7 +43,7 @@ int main() {
     printf("Enter age: ");
     scanf("%d", &age);
 
-    if (hasUniqueCharacters(name)) {
+    if (isUniquech(name)) {
         modifyString(name);
         printf("Modified name: %s\n", name);
     } else {
